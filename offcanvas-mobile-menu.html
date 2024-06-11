@@ -1,0 +1,361 @@
+<html lang="en">
+
+<head>
+	<title>BASIC OFFCANVAS BOOTSTRAP 5</title>
+
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+
+	<style>
+		.body-with-menu {
+			overflow: hidden; 
+			padding-right: 0px;
+		}
+
+		.open-nav-icon {
+			background: transparent;
+			border: 0;
+			color: #000;
+			font-weight: 700;
+			margin-top: 2rem;
+			margin-left: 2rem;
+			font-size: 1rem;
+			letter-spacing: 0.5rem;
+		}
+
+		.open-nav-icon svg {
+			width: 2rem;
+			height: 2rem;
+			vertical-align: middle;
+		}
+
+		/* Ховаємо затемнення вкладеного меню, щоб не було 2 */
+		.offcanvas-backdrop+.offcanvas-backdrop {
+			display: none;
+		}
+
+
+		/* Заокруглення меню */
+		.offcanvas.offcanvas-start {
+			border-top-right-radius: 2rem
+		}
+
+		/* Заголовок меню */
+		.offcanvas-header {
+			display: block;
+			position: relative;
+			border-bottom: 1px solid #000;
+		}
+
+		.offcanvas-header .btn-close {
+			position: absolute;
+			left: 20px;
+			top: 20px;
+
+			width: 1.5rem;
+			height: 1.5rem;
+			vertical-align: middle;
+			background: unset;
+		}
+
+		.offcanvas-header .btn-close svg {
+			width: 1.5rem;
+			height: 1.5rem;
+			vertical-align: middle;
+		}
+
+		/* .offcanvas-header .logo {} */
+
+		.offcanvas-header .logo svg {
+			height: 40px;
+			width: auto;
+		}
+
+		.offcanvas-header .logo svg .st2 {
+			fill: #004275;
+		}
+
+
+		/* Меню */
+		.offcanvas-body ul {
+			margin: 0;
+			padding: 0;
+		}
+
+		.offcanvas-body ul li {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		.offcanvas-body ul li a {
+			text-transform: uppercase;
+			color: #000;
+			text-decoration: none;
+			margin: 10px 0;
+			display: block;
+		}
+
+
+		/* 2-й рівень */
+		.main-nav .menu-item-has-children>a::after {
+			content: ">";
+			margin-left: 10px;
+			display: inline-block;
+		}
+
+		/* 3-й рівень */
+		.sub-menu-content .sub-menu .menu-item-has-children>a::after {
+			content: ">>";
+			margin-left: 10px;
+			display: inline-block;
+		}
+
+		.menu-item-has-children>.sub-menu {
+			display: none;
+			height: 0;
+			max-height: 0;
+		}
+
+		.sub-menu {
+			transition: all 0.5s;
+		}
+
+		.sub-menu .sub-menu li {
+			margin-left: 20px;
+		}
+	</style>
+</head>
+
+<body>
+	<script id="__bs_script__">
+		//<![CDATA[
+		(function () {
+			try {
+				var script = document.createElement('script');
+				if ('async') {
+					script.async = true;
+				}
+				script.src = '/browser-sync/browser-sync-client.js?v=2.29.3'.replace("HOST", location.hostname);
+				if (document.body) {
+					document.body.appendChild(script);
+				} else if (document.head) {
+					document.head.appendChild(script);
+				}
+			} catch (e) {
+				console.error("Browsersync: could not append script tag", e);
+			}
+		})()
+		//]]>
+	</script>
+
+	<!-- ОСНОВНЕ OFFCANVAS BOOTSTRAP 5 -->
+	<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel"
+		aria-hidden="true" style="visibility: hidden;">
+		<div class="offcanvas-header  text-center">
+			<h5 class="offcanvas-title" id="offcanvasLabel">Навігація OffCanvas</h5>
+
+			<button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Закрити">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg"
+					viewBox="0 0 16 16">
+					<path
+						d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z" />
+				</svg>
+			</button>
+		</div>
+		<div class="offcanvas-body">
+			<nav class="main-nav">
+				<ul>
+					<li id="menu-item-1211"
+						class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1211">
+						<a href="/about-us/">Про клініку</a>
+						<ul class="sub-menu">
+							<li id="menu-item-1747"
+								class="menu-item menu-item-type-post_type_archive menu-item-object-doctor menu-item-has-children menu-item-1747">
+								<a href="/team/">Наша команда</a>
+								<ul class="sub-menu">
+									<li id="menu-item-2065"
+										class="menu-item menu-item-type-post_type_archive menu-item-object-kes_blog menu-item-2065">
+										<a href="/news/">Блог</a>
+									</li>
+									<li id="menu-item-1958"
+										class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1958">
+										<a href="/press/">Новини</a>
+									</li>
+								</ul>
+							</li>
+							<li id="menu-item-1747"
+								class="menu-item menu-item-type-post_type_archive menu-item-object-doctor menu-item-has-children menu-item-1747">
+								<a href="/price/">Прайс</a>
+								<ul class="sub-menu">
+									<li id="menu-item-2065"
+										class="menu-item menu-item-type-post_type_archive menu-item-object-kes_blog menu-item-2065">
+										<a href="/news/">Блог</a>
+									</li>
+									<li id="menu-item-1958"
+										class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1958">
+										<a href="/press/">Новини</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li id="menu-item-1212"
+						class="menu-item menu-item-type-post_type_archive menu-item-object-kes_service menu-item-has-children menu-item-1212">
+						<a href="/services/">Послуги</a>
+						<ul class="sub-menu">
+							<li id="menu-item-1215"
+								class="menu-item menu-item-type-post_type menu-item-object-kes_service menu-item-1215">
+								<a href="/services/veneers/">Вініри</a>
+							</li>
+							<li id="menu-item-1213"
+								class="menu-item menu-item-type-post_type menu-item-object-kes_service menu-item-1213">
+								<a href="/services/orthodontics/">Брекети</a>
+							</li>
+							<li id="menu-item-1220"
+								class="menu-item menu-item-type-post_type menu-item-object-kes_service menu-item-1220">
+								<a href="/services/implantation/microsurgery/">Лікування
+									пародонтозу</a>
+							</li>
+						</ul>
+					</li>
+					<li id="menu-item-1225"
+						class="menu-item menu-item-type-post_type_archive menu-item-object-case menu-item-1225"><a
+							href="/clinicalcases/">Галерея</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+	<!-- ЦЕ ПОРОЖНІЙ OFFCANVAS, ЯКИЙ БУДЕ ЗАПОВНЕНИЙ ПІДМЕНЮ ЗА ДОПОМОГОЮ JAVASCRIPT -->
+	<div class="offcanvas offcanvas-start" tabindex="-1" id="nav_sub" aria-labelledby="nav_subLabel">
+		<div class="offcanvas-header text-center">
+			<h5 class="offcanvas-title" id="nav_subLabel">
+				<!-- ЦЕ БУДЕ ЗАПОВНЕНО ЗА ДОПОМОГОЮ JAVASCRIPT -->
+			</h5>
+			<button type="button" class="btn-close btn-back text-reset" data-bs-dismiss="nav_sub" aria-label="Закрити">
+				<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+					class="bi bi-chevron-left" viewBox="0 0 16 16">
+					<path fill-rule="evenodd"
+						d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
+				</svg>
+			</button>
+		</div>
+		<div class="offcanvas-body">
+			<div class="sub-menu-content">
+				<!-- ЦЕ БУДЕ ЗАПОВНЕНО ЗА ДОПОМОГОЮ JAVASCRIPT ВМІСТОМ ПІДМЕНЮ -->
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- КНОПКА ВІДКРИТТЯ ТА ЗАКРИТТЯ ВСЬОГО НОВОГО МОБІЛЬНОГО МЕНЮ -->
+	<button class="open-nav-icon" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas"
+		aria-controls="offcanvas">
+		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list"
+			viewBox="0 0 16 16">
+			<path fill-rule="evenodd"
+				d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5" />
+		</svg>
+	</button>
+
+	<div class="body__background-with-menu "></div>
+
+	<script>
+		const openNavigationButton = document.getElementsByClassName('open-nav-icon')[0];
+		const navigationMenu = document.getElementById('offcanvas');
+		const navigationMenuCloseButton = navigationMenu.querySelector('.btn-close');
+		const navigationSubMenu = document.getElementById('nav_sub');
+		const navigationSubMenuBody = navigationSubMenu.querySelector('.sub-menu-content');
+		const navigationSubMenuBackButton = navigationSubMenu.querySelector('.btn-back');
+		const navigationSubMenuTitle = navigationSubMenu.querySelector('.offcanvas-title');
+		const canvasList = navigationMenu.querySelector('.main-nav > ul').children;
+		const backgroundBodyElement = document.body.querySelector('.body__background-with-menu');
+
+		// Перебір елементів головного списку для першого меню
+		for (const listItem of canvasList) {
+			// перевірка чи має елемент списку клас has-children
+			if (listItem.classList.contains('menu-item-has-children')) {
+				const linkButton = listItem.querySelector('a');
+				const listItemChildList = [...listItem.children][1];
+
+				// додаємо слухач кліків на кожне посилання навігації у якого є ще посилання на другу сторінку меню
+				linkButton.addEventListener('click', (e) => {
+					e.preventDefault();
+
+					// додає заголовок для меню другого рівня та бере його з тексту кнопки
+					navigationSubMenuTitle.innerHTML =
+						`${linkButton.innerText[0].toUpperCase()}${linkButton.innerText.slice(1).toLowerCase()}`;
+
+					// додає html код в body меню другого рівня
+					navigationSubMenuBody.innerHTML = `<ul class="sub-menu">
+							${listItemChildList.innerHTML}
+						</ul>`;
+
+					const children = navigationSubMenuBody.querySelector('.sub-menu').children;
+					
+					// перебирає вкладені в меню другого рівня елементи
+					for (const child of children) {
+						// перевіряє чи елемент має клас has-children
+						if (child.classList.contains('menu-item-has-children')) {
+							const childLinkButton = [...child.children][0];
+							const childList = child.querySelector('.sub-menu');
+							console.log('child', child);
+							console.log('childLinkButton: ', childLinkButton);
+							console.log(childList);
+
+							// вішає слухач подій на посилання меню другого рівня в якого є children елементи
+							childLinkButton.addEventListener('click', (e) => {
+								e.preventDefault();
+
+								// перевірка чи елементи треба згорнути чи розгорнути
+								if (childList.style.display === 'none' || childList.style.display === '' || !childList.style.maxHeight) {
+									childList.style.display = 'block';
+									childList.style.maxHeight = childList.scrollHeight + "px";
+									childList.style.height = childList.scrollHeight + "px";
+								} else {
+									childList.style.maxHeight = null;
+									childList.style.display = 'none'
+								}
+							})
+						}
+					}
+
+					navigationSubMenu.style = 'visibility: visible;';
+					navigationSubMenu.classList.add('show');
+				})
+			}
+		}
+		// кнопка закриває меню
+		navigationMenuCloseButton.addEventListener('click', () => {
+			document.body.classList.remove('body-with-menu');
+			navigationMenu.classList.remove('show');
+
+			backgroundBodyElement.classList.remove('body__background-with-menu--active');
+		})
+
+		// кнопка згортає друге меню
+		navigationSubMenuBackButton.addEventListener('click', () => {
+			navigationSubMenuTitle.innerHTML = '';
+
+			// navigationSubMenu.style = 'visibility: visible;';
+			navigationSubMenu.classList.remove('show');
+		})
+
+
+		// перша кнопка яка відкриває меню
+		openNavigationButton.addEventListener('click', () => {
+			document.body.classList.add('body-with-menu');
+
+			navigationMenu.style = 'visibility: visible;';
+			navigationMenu.classList.add('show');
+			backgroundBodyElement.classList.add('body__background-with-menu--active');
+			// document.body.innerHTML += '<div class="body__background-with-menu"></div>';
+		})
+	</script>
+</body>
+
+</html>
